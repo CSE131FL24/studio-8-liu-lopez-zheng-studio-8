@@ -26,7 +26,15 @@ public class Quiz {
 	}
 	
 	public void takeQuiz() {
-		//FIXME
+		for(int i=0;i<questions.length;i++) {
+			Question current= questions[i];
+			current.displayPrompt();
+			String answer=getUserAnswer();
+			int pointsEarned=current.checkAnswer(answer);
+			System.out.println("You earned "+pointsEarned+" points for this question.");
+			
+		}
+		System.out.println(getTotalPoints());
 	}
 	
 	public static void main(String[] args) {
